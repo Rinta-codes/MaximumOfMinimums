@@ -1,0 +1,15 @@
+﻿<h2>Welcome!</h2>
+
+You used Window Size:
+@ViewData["Value"]
+</br>
+For Array:
+@ViewData["Array"]
+</br>
+And your result is:
+@ViewData["Output"]
+
+
+</br>
+</br>
+<input type="button" value="Return" onclick="location.href='@Url.Action("Welcome", "HelloWorld")'" />

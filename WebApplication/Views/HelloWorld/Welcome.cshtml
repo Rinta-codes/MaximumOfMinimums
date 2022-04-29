@@ -1,0 +1,58 @@
+﻿<h2>Welcome, @ViewData["Name"]!</h2>
+
+@*<ul>
+        @for (int i = 0; i < (int)ViewData["NumTimes"]!; i++)
+        {
+            <li>@i</li>
+        }
+    </ul>*@
+
+</br>
+<input type="button" value="Click Me For Fun" onclick="location.href='@Url.Action("Results", "HelloWorld")'" />
+</br></br>
+When supplied with a list of <b>n</b> integer values, and an integer window size (between 1 and n),
+</br>
+this app will calculate the maximum of all minimums for that window size.
+</br></br>
+<i>Window</i> is a sequential subset.
+</br></br>
+For example:
+</br>
+Values - [1, 2, 2, 4, 3, 3], window size - 3
+</br>
+Windows of size 3 - [1, 2, 2], [2, 2, 4], [2, 4, 3], [4, 3, 3]
+</br>
+Minimums for these windows - 1, 2, 2, 3
+</br>
+Maximum of minimums - <b>3</b>
+</br></br>
+@using (Html.BeginForm("PrintData", "HelloWorld", FormMethod.Post))
+{
+    @model Calculus
+    <table>
+        <tr>
+            <td>
+                List of integers separated by spaces:
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.ListOfNumbers)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Window size:
+            </td>
+            <td> @Html.TextBoxFor(x => x.WindowSize)</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Calculate Maximum of Minimums" />
+            </td>
+        </tr>
+    </table>
+}
